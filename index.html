@@ -35,53 +35,7 @@
 				var rotate = 0;
 				var block;
 				var pblock;
-				var blocks = {A: {coor: [300,435], width: 15, type:'spikes'}, B: {coor: [450,420], width: 60,type:'blocks'} , C: {coor: [610,435], width: 15, type:'spikes'}};
-
-				/*
-				ctx.fillStyle = "#FF0000";
-				ctx.fillRect(50,435,60,15);
-
-				ctx.fillStyle = "grey"        
-				ctx.fillRect(160,420,60,30);
-
-				ctx.moveTo(0,450);
-				ctx.lineTo(500,450);
-				ctx.stroke();
-
-				ctx.beginPath();
-				ctx.arc(440,60,50,0,2*Math.PI);
-				ctx.stroke();
-
-				ctx.font = "30px Arial";
-				ctx.strokeText('Imposibru Game',5,30);
-				*/
-				drawME = function(color){
-					ctx.fillStyle = color;
-					ctx.fillRect(myPos[0],myPos[1],60,15);
-				};
-
-				/*
-				ctx.moveTo(0,451);
-				ctx.lineTo(500,451);
-				ctx.stroke();
-
-
-				ctx.fillStyle = 'red';
-				ctx.fillRect(50,435,60,15);
-				ctx.save();
-				ctx.translate(50,435);
-				ctx.translate(30,7.5);
-				ctx.rotate(-0.5);
-				ctx.fillStyle = 'pink';
-				ctx.fillRect(-30,-7.5,60,15);
-				ctx.restore();
-				*/
-
-				//drawME(50,435,"red")
-				//drawME('red');
-				//ctx.moveTo(0,451);
-				//ctx.lineTo(500,451);
-				//ctx.stroke();
+				var blocks = {A: {coor: [300,435], width: 15, type:'spikes'}, B: {coor: [450,420], width: 60,type:'blocks'} , C: {coor: [610,435], width: 15, type:'spikes'} , D: {coor: [665,420], width: 60, type:'blocks'} , E: {coor: [755,405], width: 60, type:'blocks'} , F: {coor: [845,390], width: 60, type:'blocks'} , G: {coor: [935,375], width: 60, type:'blocks'} , H: {coor: [1025,375], width: 15, type:'spikes'}, I: {coor: [1075,375], width: 60, type:'blocks'}};
 
 				$(document).keydown(function(key){
 					console.log(key.keyCode);
@@ -124,10 +78,6 @@
 					ctx.clearRect(-10,-30,90,90);
 					ctx.restore();
 				}
-
-				
-
-
 
 				var gravity = setInterval(function(){
 								
@@ -271,7 +221,7 @@
 				block = blocks.A;
 				
 				var moving = setInterval(function(){
-					//block = blocks.A;
+					
 					_.each(blocks, function(x,i){
 						if(x.coor[0]-62 < myPos[0]){
 							pblock = block;
@@ -306,7 +256,6 @@
 							ctx.strokeText('You Da Man!',150,405);
 						}
 					})
-					//console.log(blocks);
 
 				},1);
 				
